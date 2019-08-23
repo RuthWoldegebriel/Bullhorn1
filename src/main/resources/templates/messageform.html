@@ -6,7 +6,7 @@
     <posteddate>posteddate</posteddate>
 </head>
 <body>
-<form action="#" th:action="@{/process}" th:object="${message}" method="post">
+<form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
     <input type="hidden" th;field="*{posteddate}" />
     posteddate :<input type="text" th:field="*{posteddate}" />
     <span th:if="${#fields.hasErrors('posteddate')}"
@@ -17,6 +17,8 @@
     content:<input type="text" th:field="*{content}" />
     <span th:if="${#fields.hasErrors('content')}"
           th:errors="*{description}"></span><br />
+    photo:<input type="file" name="file" />
+
     <br />
     <input type="submit" value="Submit" />
 
