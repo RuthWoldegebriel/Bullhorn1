@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <posteddate>posteddate</posteddate>
+</head>
+<body>
+<form action="#" th:action="@{/process}" th:object="${message}" method="post">
+    <input type="hidden" th;field="*{posteddate}" />
+    posteddate :<input type="text" th:field="*{posteddate}" />
+    <span th:if="${#fields.hasErrors('posteddate')}"
+          th:errors="*{posteddate}"></span><br />
+    sentby :<input type="text" th:field="*{sentby}" />
+    <span th:if="${#fields.hasErrors('sentby')}"
+          th:errors="*{sentby}"></span><br />
+    content:<input type="text" th:field="*{content}" />
+    <span th:if="${#fields.hasErrors('content')}"
+          th:errors="*{description}"></span><br />
+    <br />
+    <input type="submit" value="Submit" />
+
+</form>
+</body>
+</html>
